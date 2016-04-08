@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="C:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\bin\Debug\SageframeTest.dll" total="1" errors="0" failures="1" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2015-09-17" time="09:52:59">
+  <environment nunit-version="2.6.4.14350" clr-version="2.0.50727.8000" os-version="Microsoft Windows NT 6.2.9200.0" platform="Win32NT" cwd="D:\Personnel\NUnit-2.6.4\bin" machine-name="RAJKUMARTHAPA" user="RajKumar-PC" user-domain="RajkumarThapa" />
+  <culture-info current-culture="en-US" current-uiculture="en-US" />
+  <test-suite type="Assembly" name="C:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\bin\Debug\SageframeTest.dll" executed="True" result="Failure" success="False" time="25.419" asserts="0">
+    <results>
+      <test-suite type="Namespace" name="SageframeTest" executed="True" result="Failure" success="False" time="25.412" asserts="0">
+        <results>
+          <test-suite type="TestFixture" name="SageFrameTest" executed="True" result="Failure" success="False" time="25.398" asserts="0">
+            <results>
+              <test-case name="SageframeTest.SageFrameTest.TestSageframe" executed="True" result="Failure" success="False" time="25.390" asserts="1">
+                <failure>
+                  <message><![CDATA[  Expected: True
+  But was:  False
+]]></message>
+                  <stack-trace><![CDATA[at SageframeTest.SageFrameTest.TestSageframe() in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 394
+]]></stack-trace>
+                </failure>
+              </test-case>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>

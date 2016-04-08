@@ -1,0 +1,591 @@
+﻿<html xmlns:t="http://microsoft.com/schemas/VisualStudio/TeamTest/2010" xmlns:trxreport="urn:my-scripts">
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>body, td, th {font:smaller Verdana;vertical-align:top;text-align:left}
+body {margin:0px 0px 0px 15px}
+hr {margin:0px 0px 0px -15px;border:solid 1pt #dcdcdc}
+table {border-collapse:collapse;border:solid 1px #a9a9a9}
+th {background-color:#dcdcdc;border:solid 1px #a9a9a9;text-indent:2pt;font-weight:bolder}
+td {border:solid 1px #a9a9a9}
+pre{font-size:8pt}
+
+span.ok{background-color:lime;color:black;font-size:40%;color:lime;display:inline-block;}
+span.ko{background-color:red;color:white;font-size:40%;color:red;display:inline-block;}
+span.ignore{background-color:yellow;color:white;font-size:40%;color:yellow;display:inline-block;}
+
+p.testKo{background-color:red;font-size:small;color:red;cursor:hand;margin:0 3px;padding:0 3px;}
+p.testKo:hover{background-color:orange;}
+p.testOk{background-color:lime;font-size:small;color:lime;cursor:hand;margin:0 3px;padding:0 3px;}
+p.testOk:hover{background-color:green;}
+p.testIgnore{background-color:yellow;font-size:small;color:yellow;cursor:hand;margin:0 3px;padding:0 3px;}
+p.testIgnore:hover{background-color:grey;}
+
+div.barContainer{width:100%;border:solid 1px black}
+div.trace{font:60% Courier}
+div.border{border:dotted 1px #dcdcdc;padding:2px 2px 2px 2px}
+div.contents{border:dotted 1px #dcdcdc;padding:2px 2px 2px 2px;width:400px;background-color:#efefef}</style><script language="javascript" type="text/javascript">function summary(){
+	var tables = document.getElementsByTagName('table'); 	
+	var tSummaryDetail = document.getElementById('tSummaryDetail'); 	
+	var globalStats = new Array(); 	var totalTests = 0; 	
+	var totalSucceed = 0; 	
+	var totalFailed = 0; 	
+	var totalIgnored = 0; 	
+	var percent = 0; 	
+	var totalTime = new Date(0,0,0); 	for (var i=1;i < tSummaryDetail.rows.length;i++){
+		var errInfo = parseTestClassResult(tables[i+1]);         
+		var testClassPercent = calculatePercent2(errInfo[0], errInfo[1], errInfo[2]);        
+        tSummaryDetail.rows[i].cells[1].innerHTML = testClassPercent[0] + '%'; 		
+		tSummaryDetail.rows[i].cells[2].innerHTML = createHtmlBars(testClassPercent); 		
+		tSummaryDetail.rows[i].cells[3].innerHTML = errInfo[0]; 		
+		tSummaryDetail.rows[i].cells[4].innerHTML = errInfo[1]; 		
+		tSummaryDetail.rows[i].cells[5].innerHTML = errInfo[2]; 		
+		tSummaryDetail.rows[i].cells[6].innerHTML = errInfo[3];		
+		globalStats[i-1] = errInfo; 	
+	} 	
+	for (var i=0;i<globalStats.length;i++){
+	    totalTests+=globalStats[i][0]+globalStats[i][1]+globalStats[i][2]; 	    
+		totalSucceed+=globalStats[i][0]; 	    
+		totalFailed+=globalStats[i][1]; 	    
+		totalIgnored+=globalStats[i][2]; 	    
+		totalTime = totalTime.addTime(new Date().fromTimeStamp(globalStats[i][3] + '.0')); 	
+	} 	
+	var tMainSummary = document.getElementById('tMainSummary');	
+	percent = calculatePercent2(totalSucceed, totalFailed, totalIgnored); 	
+	tMainSummary.rows[1].cells[0].innerHTML= percent[0] + '%'; 	
+	tMainSummary.rows[1].cells[1].innerHTML=createHtmlBars(percent); 	
+	tMainSummary.rows[1].cells[2].innerHTML=totalTests; 	
+	tMainSummary.rows[1].cells[3].innerHTML=totalSucceed; 	
+	tMainSummary.rows[1].cells[4].innerHTML=totalFailed; 	
+	tMainSummary.rows[1].cells[5].innerHTML=totalIgnored; 	
+	tMainSummary.rows[1].cells[6].innerHTML=totalTime.toLongTimeString(); 
+} 
+function parseTestClassResult(testTable){
+	var success = 0; 	
+	var failed = 0; 	
+	var ignored = 0; 	
+	var testClassTime = new Date(0, 0, 0); 
+	var t = testTable; 
+	for (var i=1;i<t.rows.length;i++){	
+	    var testTime = new Date().fromTimeStamp(t.rows[i].cells[3].innerHTML);	  
+	    testClassTime = testClassTime.addTime(testTime);		
+		var pointEl = t.rows[i].cells[1].children[0]; 		
+		switch (pointEl.className){
+		    case 'testOk':
+		        success++; 		        
+				break; 		    
+			case 'testKo':
+		        failed++; 		        
+				break; 		    
+			case 'testIgnore':
+		        ignored++; 		        
+				break; 		
+		} 	
+	} 	
+	return new Array(success, failed, ignored, testClassTime.toLongTimeString()); 
+} 
+function calculatePercent2(s,f,i){
+    var t = s+f+i;     
+	var ps=(s/t)*100; 	var pf=(f/t)*100; 	var pi=(i/t)*100; 	
+	return new Array(round2(ps), round2(pf), round2(pi) ); 
+} 
+function round2(v){
+    return Math.round(v*100)/100; 
+} 				
+function createHtmlBars(percent){
+    var pcOk = percent[0];     
+	var pcKo = percent[1];     
+	var pcIg = percent[2]; 	
+	var result = '<div class="barContainer">'; 	
+	if (pcOk != 0){
+		result+='<span class="ok"  style="width:' + pcOk +'%" title="Passed!" >p</span>'; 	
+	} 	
+	if (pcKo != 0){
+		result+='<span class="ko"  style="width:' + pcKo + '%" title="Failed">f</span>'; 	
+	} 	
+	if (pcIg != 0){
+		result+='<span class="ignore"  style="width:' + pcIg+ '%" title="Ignored">i</span>'; 	
+	} 	
+	result+='</div>'; 	
+	return result; 
+} 
+function togle(anId){
+    var el = document.getElementById(anId);     
+	if (el!=null){
+	    if (el.style.display=='none'){
+			el.style.display='block'; 	    
+		}else{
+			el.style.display='none'; 	    
+		}     
+	} } 
+Number.prototype.toTSString = function(){
+    if (this<10){
+		return '0' + this;     
+	}else{
+		return this;     
+	} 
+} 
+Date.prototype.addTime = function(d){
+    return new Date(0,0,0,this.getHours() + d.getHours(),this.getMinutes() + d.getMinutes(),this.getSeconds() + d.getSeconds(),this.getMilliseconds() + d.getMilliseconds()); 
+} 
+Date.prototype.toLongTimeString = function(){  
+	return [this.getHours().toTSString(), this.getMinutes().toTSString(), this.getSeconds().toTSString()].join(":"); } 
+Date.prototype.fromTimeStamp= function(ts){
+   var t = ts.split(":");     
+   var h = t[0];     
+   var m = t[1];     
+   var s = t[2];     
+   var ams = t[2].split(".");     
+   return new Date(0, 0, 0, h, m, ams[0], ams[1].substring(0,3)); 
+ }</script><title>
+          TRX Report -
+          </title>
+  </head>
+  <body onload="summary();"><a name="__top"></a><h3>
+    </h3>
+    <div class="contents"><a href="#totals">Totals</a>
+          |
+          <a href="#summary">Summary</a>
+          |
+          <a href="#detail">Detail</a>
+          |
+          <a href="#envInfo">Environment Information</a></div><br><a name="totals"></a><table id="tMainSummary" border="0">
+      <tr>
+        <th>Percent</th>
+        <th>Status</th>
+        <th>TotalTests</th>
+        <th>Passed</th>
+        <th>Failed</th>
+        <th>Inconclusive</th>
+        <th>TimeTaken</th>
+      </tr>
+      <tr>
+        <td></td>
+        <td width="350px" style="vertical-align:middle;font-size:200%"></td>
+        <td>8</td>
+        <td>0</td>
+        <td>7</td>
+        <td>0</td>
+        <td></td>
+      </tr>
+    </table><br><a name="summary"></a><table id="tSummaryDetail" border="0">
+      <tr>
+        <th>TestClasses Summary</th>
+        <th>Percent</th>
+        <th>Status</th>
+        <th>TestsPassed</th>
+        <th>TestsFailed</th>
+        <th>TestsIgnored</th>
+        <th>Duration</th>
+      </tr>
+      <tr>
+        <td><a href="#ID0ACC0FC">SageframeTest.DeleteRole</a></td>
+        <td></td>
+        <td width="80px"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a href="#ID0ARC0UC">SageframeTest.UserSettings</a></td>
+        <td></td>
+        <td width="80px"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a href="#ID0AAD0DD">SageframeTest.UserSearch</a></td>
+        <td></td>
+        <td width="80px"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a href="#ID0APD0SD">SageframeTest.DeleteUser</a></td>
+        <td></td>
+        <td width="80px"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a href="#ID0A5D0BE">SageframeTest.AddMessageTemplate</a></td>
+        <td></td>
+        <td width="80px"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a href="#ID0ANE0QE">SageframeTest.AddRoles</a></td>
+        <td></td>
+        <td width="80px"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a href="#ID0A3E06E">SageframeTest.UserEdit</a></td>
+        <td></td>
+        <td width="80px"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a href="#ID0ALF0OF">SageframeTest.AddUsers</a></td>
+        <td></td>
+        <td width="80px"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table><br><a name="detail"></a><i>Test Class Detail</i><h5></h5><a name="ID0ACC0FC"></a><table border="0">
+      <tr>
+        <th colspan="4"><b>SageframeTest.DeleteRole</b></th>
+      </tr>
+      <tr>
+        <td>Can_DeleteRole</td>
+        <td>
+          <p class="testKo" title="Click to see the StackTrace" onmouseover="this.style.color='orange'" onmouseout="this.style.color='red'" onclick="togle('ID0EPBAC')">n</p>
+        </td>
+        <td width="300px"><br>Test method SageframeTest.DeleteRole.Can_DeleteRole threw exception: 
+OpenQA.Selenium.WebDriverTimeoutException: Timed out after 15 seconds ---&gt; OpenQA.Selenium.NoSuchElementException: Unable to locate element: {"method":"id","selector":"ctl14_UserName"}<div id="ID0EPBAC" class="trace" style="display:none">
+            <div class="border"><br><br>Test method SageframeTest.DeleteRole.Can_DeleteRole threw exception: 
+OpenQA.Selenium.WebDriverTimeoutException: Timed out after 15 seconds ---&gt; OpenQA.Selenium.NoSuchElementException: Unable to locate element: {"method":"id","selector":"ctl14_UserName"}<br>    at OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(String mechanism, String value)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElementById(String id)
+   at OpenQA.Selenium.By.&lt;&gt;c__DisplayClass2.&lt;Id&gt;b__0(ISearchContext context)
+   at OpenQA.Selenium.By.FindElement(ISearchContext context)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(By by)
+   at QASageframe.Browser.&lt;&gt;c__DisplayClass2.&lt;WaitForElement&gt;b__0(IWebDriver drv) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\QASageframe\Browser.cs:line 41
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)
+ --- End of inner exception stack trace ---
+    at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)
+   at QASageframe.Browser.WaitForElement(By by, Int32 timeoutInSeconds) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\QASageframe\Browser.cs:line 41
+   at QASageframe.AdminPage.LogIn(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\QASageframe\Admin.cs:line 79
+   at SageframeTest.DeleteRole.Can_DeleteRole() in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\DeleteRole.cs:line 13
+</div>
+            <pre class="failureInfo">    at OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(String mechanism, String value)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElementById(String id)
+   at OpenQA.Selenium.By.&lt;&gt;c__DisplayClass2.&lt;Id&gt;b__0(ISearchContext context)
+   at OpenQA.Selenium.By.FindElement(ISearchContext context)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(By by)
+   at QASageframe.Browser.&lt;&gt;c__DisplayClass2.&lt;WaitForElement&gt;b__0(IWebDriver drv) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\QASageframe\Browser.cs:line 41
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)
+ --- End of inner exception stack trace ---
+    at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)
+   at QASageframe.Browser.WaitForElement(By by, Int32 timeoutInSeconds) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\QASageframe\Browser.cs:line 41
+   at QASageframe.AdminPage.LogIn(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\QASageframe\Admin.cs:line 79
+   at SageframeTest.DeleteRole.Can_DeleteRole() in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\DeleteRole.cs:line 13
+</pre>
+          </div>
+        </td>
+        <td>00:00:17.0192905</td>
+      </tr>
+    </table><a href="#__top">Back to top</a><br><h5></h5><a name="ID0ARC0UC"></a><table border="0">
+      <tr>
+        <th colspan="4"><b>SageframeTest.UserSettings</b></th>
+      </tr>
+      <tr>
+        <td>Can_saveUserSettings</td>
+        <td>
+          <p class="testKo" title="Click to see the StackTrace" onmouseover="this.style.color='orange'" onmouseout="this.style.color='red'" onclick="togle('ID0EPEAC')">n</p>
+        </td>
+        <td width="300px"><br>Test method SageframeTest.UserSettings.Can_saveUserSettings threw exception: 
+OpenQA.Selenium.WebDriverTimeoutException: Timed out after 15 seconds ---&gt; OpenQA.Selenium.NoSuchElementException: Unable to locate element: {"method":"id","selector":"ctl14_UserName"}<div id="ID0EPEAC" class="trace" style="display:none">
+            <div class="border"><br><br>Test method SageframeTest.UserSettings.Can_saveUserSettings threw exception: 
+OpenQA.Selenium.WebDriverTimeoutException: Timed out after 15 seconds ---&gt; OpenQA.Selenium.NoSuchElementException: Unable to locate element: {"method":"id","selector":"ctl14_UserName"}<br>    at OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(String mechanism, String value)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElementById(String id)
+   at OpenQA.Selenium.By.&lt;&gt;c__DisplayClass2.&lt;Id&gt;b__0(ISearchContext context)
+   at OpenQA.Selenium.By.FindElement(ISearchContext context)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(By by)
+   at QASageframe.Browser.&lt;&gt;c__DisplayClass2.&lt;WaitForElement&gt;b__0(IWebDriver drv) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\QASageframe\Browser.cs:line 41
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)
+ --- End of inner exception stack trace ---
+    at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)
+   at QASageframe.Browser.WaitForElement(By by, Int32 timeoutInSeconds) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\QASageframe\Browser.cs:line 41
+   at QASageframe.AdminPage.LogIn(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\QASageframe\Admin.cs:line 79
+   at SageframeTest.UserSettings.Can_saveUserSettings() in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\UserSettings.cs:line 14
+</div>
+            <pre class="failureInfo">    at OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(String mechanism, String value)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElementById(String id)
+   at OpenQA.Selenium.By.&lt;&gt;c__DisplayClass2.&lt;Id&gt;b__0(ISearchContext context)
+   at OpenQA.Selenium.By.FindElement(ISearchContext context)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(By by)
+   at QASageframe.Browser.&lt;&gt;c__DisplayClass2.&lt;WaitForElement&gt;b__0(IWebDriver drv) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\QASageframe\Browser.cs:line 41
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)
+ --- End of inner exception stack trace ---
+    at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)
+   at QASageframe.Browser.WaitForElement(By by, Int32 timeoutInSeconds) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\QASageframe\Browser.cs:line 41
+   at QASageframe.AdminPage.LogIn(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\QASageframe\Admin.cs:line 79
+   at SageframeTest.UserSettings.Can_saveUserSettings() in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\UserSettings.cs:line 14
+</pre>
+          </div>
+        </td>
+        <td>00:00:16.7437729</td>
+      </tr>
+    </table><a href="#__top">Back to top</a><br><h5></h5><a name="ID0AAD0DD"></a><table border="0">
+      <tr>
+        <th colspan="4"><b>SageframeTest.UserSearch</b></th>
+      </tr>
+      <tr>
+        <td>Can_SearchUser</td>
+        <td>
+          <p class="testKo" title="Click to see the StackTrace" onmouseover="this.style.color='orange'" onmouseout="this.style.color='red'" onclick="togle('ID0EXDAC')">n</p>
+        </td>
+        <td width="300px"><br>Test method SageframeTest.UserSearch.Can_SearchUser threw exception: 
+OpenQA.Selenium.WebDriverTimeoutException: Timed out after 15 seconds ---&gt; OpenQA.Selenium.NoSuchElementException: Unable to locate element: {"method":"id","selector":"ctl14_UserName"}<div id="ID0EXDAC" class="trace" style="display:none">
+            <div class="border"><br><br>Test method SageframeTest.UserSearch.Can_SearchUser threw exception: 
+OpenQA.Selenium.WebDriverTimeoutException: Timed out after 15 seconds ---&gt; OpenQA.Selenium.NoSuchElementException: Unable to locate element: {"method":"id","selector":"ctl14_UserName"}<br>    at OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(String mechanism, String value)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElementById(String id)
+   at OpenQA.Selenium.By.&lt;&gt;c__DisplayClass2.&lt;Id&gt;b__0(ISearchContext context)
+   at OpenQA.Selenium.By.FindElement(ISearchContext context)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(By by)
+   at QASageframe.Browser.&lt;&gt;c__DisplayClass2.&lt;WaitForElement&gt;b__0(IWebDriver drv) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\QASageframe\Browser.cs:line 41
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)
+ --- End of inner exception stack trace ---
+    at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)
+   at QASageframe.Browser.WaitForElement(By by, Int32 timeoutInSeconds) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\QASageframe\Browser.cs:line 41
+   at QASageframe.AdminPage.LogIn(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\QASageframe\Admin.cs:line 79
+   at SageframeTest.UserSearch.Can_SearchUser() in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\UserSearch.cs:line 15
+</div>
+            <pre class="failureInfo">    at OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(String mechanism, String value)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElementById(String id)
+   at OpenQA.Selenium.By.&lt;&gt;c__DisplayClass2.&lt;Id&gt;b__0(ISearchContext context)
+   at OpenQA.Selenium.By.FindElement(ISearchContext context)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(By by)
+   at QASageframe.Browser.&lt;&gt;c__DisplayClass2.&lt;WaitForElement&gt;b__0(IWebDriver drv) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\QASageframe\Browser.cs:line 41
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)
+ --- End of inner exception stack trace ---
+    at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)
+   at QASageframe.Browser.WaitForElement(By by, Int32 timeoutInSeconds) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\QASageframe\Browser.cs:line 41
+   at QASageframe.AdminPage.LogIn(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\QASageframe\Admin.cs:line 79
+   at SageframeTest.UserSearch.Can_SearchUser() in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\UserSearch.cs:line 15
+</pre>
+          </div>
+        </td>
+        <td>00:00:16.9902205</td>
+      </tr>
+    </table><a href="#__top">Back to top</a><br><h5></h5><a name="ID0APD0SD"></a><table border="0">
+      <tr>
+        <th colspan="4"><b>SageframeTest.DeleteUser</b></th>
+      </tr>
+      <tr>
+        <td>Can_DeleteUser</td>
+        <td>
+          <p class="testKo" title="Click to see the StackTrace" onmouseover="this.style.color='orange'" onmouseout="this.style.color='red'" onclick="togle('ID0EHCAC')">n</p>
+        </td>
+        <td width="300px"><br>Test method SageframeTest.DeleteUser.Can_DeleteUser threw exception: 
+OpenQA.Selenium.WebDriverTimeoutException: Timed out after 15 seconds ---&gt; OpenQA.Selenium.NoSuchElementException: Unable to locate element: {"method":"id","selector":"ctl14_UserName"}<div id="ID0EHCAC" class="trace" style="display:none">
+            <div class="border"><br><br>Test method SageframeTest.DeleteUser.Can_DeleteUser threw exception: 
+OpenQA.Selenium.WebDriverTimeoutException: Timed out after 15 seconds ---&gt; OpenQA.Selenium.NoSuchElementException: Unable to locate element: {"method":"id","selector":"ctl14_UserName"}<br>    at OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(String mechanism, String value)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElementById(String id)
+   at OpenQA.Selenium.By.&lt;&gt;c__DisplayClass2.&lt;Id&gt;b__0(ISearchContext context)
+   at OpenQA.Selenium.By.FindElement(ISearchContext context)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(By by)
+   at QASageframe.Browser.&lt;&gt;c__DisplayClass2.&lt;WaitForElement&gt;b__0(IWebDriver drv) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\QASageframe\Browser.cs:line 41
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)
+ --- End of inner exception stack trace ---
+    at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)
+   at QASageframe.Browser.WaitForElement(By by, Int32 timeoutInSeconds) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\QASageframe\Browser.cs:line 41
+   at QASageframe.AdminPage.LogIn(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\QASageframe\Admin.cs:line 79
+   at SageframeTest.DeleteUser.Can_DeleteUser() in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\DeleteUser.cs:line 13
+</div>
+            <pre class="failureInfo">    at OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(String mechanism, String value)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElementById(String id)
+   at OpenQA.Selenium.By.&lt;&gt;c__DisplayClass2.&lt;Id&gt;b__0(ISearchContext context)
+   at OpenQA.Selenium.By.FindElement(ISearchContext context)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(By by)
+   at QASageframe.Browser.&lt;&gt;c__DisplayClass2.&lt;WaitForElement&gt;b__0(IWebDriver drv) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\QASageframe\Browser.cs:line 41
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)
+ --- End of inner exception stack trace ---
+    at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)
+   at QASageframe.Browser.WaitForElement(By by, Int32 timeoutInSeconds) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\QASageframe\Browser.cs:line 41
+   at QASageframe.AdminPage.LogIn(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\QASageframe\Admin.cs:line 79
+   at SageframeTest.DeleteUser.Can_DeleteUser() in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\DeleteUser.cs:line 13
+</pre>
+          </div>
+        </td>
+        <td>00:00:17.4164974</td>
+      </tr>
+    </table><a href="#__top">Back to top</a><br><h5></h5><a name="ID0A5D0BE"></a><table border="0">
+      <tr>
+        <th colspan="4"><b>SageframeTest.AddMessageTemplate</b></th>
+      </tr>
+      <tr>
+        <td>Can_AddMessageTemplate</td>
+        <td>
+          <p class="testKo" title="Click to see the StackTrace" onmouseover="this.style.color='orange'" onmouseout="this.style.color='red'" onclick="togle('ID0ELH')">n</p>
+        </td>
+        <td width="300px"><br>Test method SageframeTest.AddMessageTemplate.Can_AddMessageTemplate threw exception: 
+OpenQA.Selenium.NoSuchElementException: Unable to locate element: {"method":"id","selector":"xEditingArea"}<div id="ID0ELH" class="trace" style="display:none">
+            <div class="border"><br><br>Test method SageframeTest.AddMessageTemplate.Can_AddMessageTemplate threw exception: 
+OpenQA.Selenium.NoSuchElementException: Unable to locate element: {"method":"id","selector":"xEditingArea"}<br>    at OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(String mechanism, String value)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElementById(String id)
+   at OpenQA.Selenium.By.&lt;&gt;c__DisplayClass2.&lt;Id&gt;b__0(ISearchContext context)
+   at OpenQA.Selenium.By.FindElement(ISearchContext context)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(By by)
+   at QASageframe.Message_TemplatePage.AddMT(String n, String email, String subject, String text, Boolean save, String tmtt, String mttext, String token) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\QASageframe\Message-Template.cs:line 115
+   at SageframeTest.AddMessageTemplate.Can_AddMessageTemplate() in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\AddMessageTemplate.cs:line 14
+</div>
+            <pre class="failureInfo">    at OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(String mechanism, String value)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElementById(String id)
+   at OpenQA.Selenium.By.&lt;&gt;c__DisplayClass2.&lt;Id&gt;b__0(ISearchContext context)
+   at OpenQA.Selenium.By.FindElement(ISearchContext context)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(By by)
+   at QASageframe.Message_TemplatePage.AddMT(String n, String email, String subject, String text, Boolean save, String tmtt, String mttext, String token) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\QASageframe\Message-Template.cs:line 115
+   at SageframeTest.AddMessageTemplate.Can_AddMessageTemplate() in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\AddMessageTemplate.cs:line 14
+</pre>
+          </div>
+        </td>
+        <td>00:00:42.9622413</td>
+      </tr>
+    </table><a href="#__top">Back to top</a><br><h5></h5><a name="ID0ANE0QE"></a><table border="0">
+      <tr>
+        <th colspan="4"><b>SageframeTest.AddRoles</b></th>
+      </tr>
+      <tr>
+        <td>Can_AddRole</td>
+        <td>
+          <p class="testKo" title="Click to see the StackTrace" onmouseover="this.style.color='orange'" onmouseout="this.style.color='red'" onclick="togle('ID0EEAAC')">n</p>
+        </td>
+        <td width="300px"><br>Assert.IsTrue failed. <div id="ID0EEAAC" class="trace" style="display:none">
+            <div class="border"><br><br>Assert.IsTrue failed. <br>   at SageframeTest.AddRoles.Can_AddRole() in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\AddRoles.cs:line 15
+</div>
+            <pre class="failureInfo">   at SageframeTest.AddRoles.Can_AddRole() in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\AddRoles.cs:line 15
+</pre>
+          </div>
+        </td>
+        <td>00:00:01.5794896</td>
+      </tr>
+    </table><a href="#__top">Back to top</a><br><h5></h5><a name="ID0A3E06E"></a><table border="0">
+      <tr>
+        <th colspan="4"><b>SageframeTest.UserEdit</b></th>
+      </tr>
+      <tr>
+        <td>Can_EditUserProfile</td>
+        <td>
+          <p class="testKo" title="Click to see the StackTrace" onmouseover="this.style.color='orange'" onmouseout="this.style.color='red'" onclick="togle('ID0E6CAC')">n</p>
+        </td>
+        <td width="300px"><br>Test method SageframeTest.UserEdit.Can_EditUserProfile threw exception: 
+OpenQA.Selenium.WebDriverTimeoutException: Timed out after 15 seconds ---&gt; OpenQA.Selenium.NoSuchElementException: Unable to locate element: {"method":"id","selector":"ctl14_UserName"}<div id="ID0E6CAC" class="trace" style="display:none">
+            <div class="border"><br><br>Test method SageframeTest.UserEdit.Can_EditUserProfile threw exception: 
+OpenQA.Selenium.WebDriverTimeoutException: Timed out after 15 seconds ---&gt; OpenQA.Selenium.NoSuchElementException: Unable to locate element: {"method":"id","selector":"ctl14_UserName"}<br>    at OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(String mechanism, String value)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElementById(String id)
+   at OpenQA.Selenium.By.&lt;&gt;c__DisplayClass2.&lt;Id&gt;b__0(ISearchContext context)
+   at OpenQA.Selenium.By.FindElement(ISearchContext context)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(By by)
+   at QASageframe.Browser.&lt;&gt;c__DisplayClass2.&lt;WaitForElement&gt;b__0(IWebDriver drv) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\QASageframe\Browser.cs:line 41
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)
+ --- End of inner exception stack trace ---
+    at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)
+   at QASageframe.Browser.WaitForElement(By by, Int32 timeoutInSeconds) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\QASageframe\Browser.cs:line 41
+   at QASageframe.AdminPage.LogIn(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\QASageframe\Admin.cs:line 79
+   at SageframeTest.UserEdit.Can_EditUserProfile() in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\UserEdit.cs:line 14
+</div>
+            <pre class="failureInfo">    at OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(String mechanism, String value)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElementById(String id)
+   at OpenQA.Selenium.By.&lt;&gt;c__DisplayClass2.&lt;Id&gt;b__0(ISearchContext context)
+   at OpenQA.Selenium.By.FindElement(ISearchContext context)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(By by)
+   at QASageframe.Browser.&lt;&gt;c__DisplayClass2.&lt;WaitForElement&gt;b__0(IWebDriver drv) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\QASageframe\Browser.cs:line 41
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)
+ --- End of inner exception stack trace ---
+    at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)
+   at QASageframe.Browser.WaitForElement(By by, Int32 timeoutInSeconds) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\QASageframe\Browser.cs:line 41
+   at QASageframe.AdminPage.LogIn(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\QASageframe\Admin.cs:line 79
+   at SageframeTest.UserEdit.Can_EditUserProfile() in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\UserEdit.cs:line 14
+</pre>
+          </div>
+        </td>
+        <td>00:00:17.2754025</td>
+      </tr>
+    </table><a href="#__top">Back to top</a><br><h5></h5><a name="ID0ALF0OF"></a><table border="0">
+      <tr>
+        <th colspan="4"><b>SageframeTest.AddUsers</b></th>
+      </tr>
+      <tr>
+        <td>Can_AddUsers</td>
+        <td>
+          <p class="testIgnore" title="Click to see test Trace" onmouseover="this.style.color='white'" onmouseout="this.style.color='yellow'" onclick="togle('ID0E3AAC')">n</p>
+        </td>
+        <td width="300px"><br>UTA007: Method Can_AddUsers defined in class SageframeTest.AddUsers does not have correct signature. Test method marked with the [TestMethod] attribute must be non-static, public, does not return a value and should not take any parameter. for example: public void Test.Class1.Test().  Additionally, return-type must be Task if you are running async unit tests. Example: public async Task Test.Class1.Test2().<div id="ID0E3AAC" class="trace" style="display:none">
+            <div class="border"><br><br>UTA007: Method Can_AddUsers defined in class SageframeTest.AddUsers does not have correct signature. Test method marked with the [TestMethod] attribute must be non-static, public, does not return a value and should not take any parameter. for example: public void Test.Class1.Test().  Additionally, return-type must be Task if you are running async unit tests. Example: public async Task Test.Class1.Test2().<br></div>
+          </div>
+        </td>
+        <td>
+        </td>
+      </tr>
+    </table><a href="#__top">Back to top</a><br><br><a name="envInfo"></a><table>
+      <tr>
+        <th colspan="2">TestRun Environment Information</th>
+      </tr>
+      <tr>
+        <th align="right">TestCodebase</th>
+        <td>C:/Users/RajKumar-PC/Documents/Visual Studio 2013/Projects/QASageframe/SageframeTest/bin/Debug/SageframeTest.dll</td>
+      </tr>
+      <tr>
+        <th align="right">AssemblyUnderTest</th>
+        <td>
+        </td>
+      </tr>
+      <tr>
+        <th align="right">MachineName</th>
+        <td>RAJKUMARTHAPA</td>
+      </tr>
+      <tr>
+        <th align="right">UserName</th>
+        <td>RajkumarThapa\RajKumar-PC</td>
+      </tr>
+      <tr>
+        <th align="right">Original TRXFile</th>
+        <td>RajKumar-PC@RAJKUMARTHAPA 2015-04-03 15:49:50</td>
+      </tr>
+    </table>
+    <hr style="border-style:dotted;color:#dcdcdc"><i style="width:100%;font:10pt Verdana;text-align:center;background-color:#dcdcdc">
+          The VSTS Test Results HTML Viewer. (c) <a href="http://blogs.msdn.com/rido">rido</a>'2010
+        </i></body>
+</html>

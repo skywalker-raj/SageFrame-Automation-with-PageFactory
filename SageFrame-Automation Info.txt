@@ -1,0 +1,179 @@
+# Various Librarys :
+1) QASageFrame (Framework consisting of all the classes for individual pages and Browser Manipulation): Uses reference of Selenium WebDriver
+Classes such as :
+- Browser (Consist all methods required for browser manipulation) : Includes Following Funtions
+	> IECapabilities : IE Browser Settings    *Need not to use in tests
+	> DesiredCapabilities : HTMLUnit Browser  *Need not to use in tests
+	> GetWebDriver : Create a Driver(For Browser Manipulation) *Need not to use in tests
+	> GoTo : Navigate Url
+	> ISearchContext : Returns Driver
+	> ConfigureBrowser : Browser manipulation such as maximizing window/Clearing Cookies
+	> Wait : Implicit Wait( Wait for given amount of time)
+	> Title : Return the title of the page
+	> IsAt : Verifying if it is the intended page
+	> SwitchToAlert : Handling Alert PopUps
+	> Refresh : Refresh Page
+	> CheckBrokenImages : Check If any Images are Broken
+	> ClickOnInvinsibleElement : Method to Click on invisible elements
+	> ProcesRun : Method to run a small process
+	> MouseMovement : Method for Moving mouse
+	> MouseRightClick : Right Click Operation for Mouse
+	> Drag an drop : Drag and drop
+	> SwitchFrames : Switching between frames
+	> SwitchToMainWindow : Switching to Main Window.
+	> ScrollDown : Scrolling done Method
+	> CheckBox : Check box selector
+	> SelectDropDown : Dropdown Selector
+	> JSExecutor : Execute JS
+	> WaitForElement : Explicit wait(wait until an element is returned)
+	> WaitForAnWebElementDisplayed : Explicit wait(wait until an element is displayed)
+	> WaitForAnWebElementEnabled : Explicit wait(wait until an element is enabled)
+	> DateSelect : Select Date from datepicker
+	> ClearNFillText : clear and fill text boxes
+	> SaveCancel : save or cancel
+	> RandomStringGenerator : Generates Random String
+	> Confirm : Delete Confirmation
+	> TearDown : Quiting the browser
+- Admin (Consist of elemenths and methods for admin page)
+	> LogIn : For Login Purpose
+	> LogOut : For Logout Purpose
+	> GetLink : Click the link from sidebar	 *Need not to use in tests
+	> Users : Goto Users Page
+	> Roles : Goto Roles Page
+- CacheMaintenance (Consist of elements and methods for Cache Maintenance Page)
+	> CacheSettings : For Various CacheSettings Operations
+	> Check : Returns CheckBox Element for CacheSettings *Need not to use in tests
+- CDN (Consist of elements and methods for CDN Page)
+	> CDNChanges : For CDN Settings
+- Event-Log (Consist of elements and methods for Event Log Page)
+	> EventLogOperation : For Event Log Management
+- ExcelImports (Consist of method for importing data from excel)
+	> ExcelImport : For Importing Data from Excel file
+- Links (Consist of elements and methods for Links Page)
+	> LinksOperations : For Adding/Deleting Links in the SideBar
+- Lists (Consist of elements and methods for List Page)
+	> ListManagement : For Lists Management, i.e. Add/Edit/Delete
+- Localization (Consist of elements and methods for Localization Page)
+	> InstallLanguagePack : Install Language Pack
+	> AddLanguage : Add Language Operation
+	> SetLocalizeMenu : Set Localize Menu
+	> GetTimeZoneTextBox : Get TimeZone TextBox Element
+	> CreateLanguagePack : Create Language Pack
+	> TimeZoneEditor : Time Zone Editor
+	> LocalizeMenu : Localize Menu
+	> LocalizeModuleTitle : Localize Module Title
+	> EditLanguage : Edit Language
+	> FillKeyValues : Fill the details
+	> PortalModules : Portal Modules Localization
+	> EditResources : Edit Resources
+	> AdminModules : Admin Module Localization
+	> AdminRoot : Admin Root
+	> XMLClientResources : Edit XML Client Resources
+- Menu (Consist of elements and methods for Menu Page)
+	> MenuManage : Manage Menu Operations
+	> Add Menu : Add Menu operation
+	> Menu Changes : Edit/Delete Menu Operations
+- Message-Template (Consist of elements and methods for Message Templates Page)
+	> ADDMT : Add Message Template
+	> SelectToken : Select Token Value From Dropdown
+- Module (Consist of elements and methods for Module Page)
+	> Create_Module : Create Module
+	> Install_Module : Install Module
+	> Edit_Module : Edit Module
+	> Create_Package : Create Module Package
+	> Create_CompositePackage : Create Composite Module Package
+	> DownloadModule : Download Module
+	> Search_Module : Search Module
+- Module-Maker (Consist of elements and methods for Module Maker Page)
+	> ModuleMaker : Create Module with Module Maker
+- Module-Message (Consist of elements and methods for Module Message Page)
+	> Edit_ModuleMessage : Edit Module Message
+- Pages (Consist of elements and methods for Pages Page)
+	> SearchPage : Search Page
+	> SetPermission : Set Permission
+	> FillPage : Fill Page Details
+	> PageGroup : Select Page Type Admin/Portal
+	> CreatePage : Create Page
+	> PageManagement : Page Management Operations
+	> Module : Returns Module Element
+	> SearchModule : Returns searched Module
+	> SwitchMode : Switch Mode
+	> PublishPage : Publish Page Operation
+	> SelectLayout : Select Layout Operations
+	> Page : Manage Modules
+	> ModuleDetails : Fill in Module Details
+- Portals (Consist of elements and methods for Portal Page)
+	> AddNewPortal : Add New Portal
+	> PortalOperations : Return Portal Link
+	> PortalSettings : Portal Settings
+- Role (Consist of elements and methods for Role Page)
+	> AddRole : Add Role Operation
+	> DelRole : Delete Role
+	> PageRoleSettings : Fill In Page Role Settings Value
+	> DashboardRoleSettings : Set Dashboard Role Settings
+	> CheckBoxSelect : Select Check Box 
+- Scheduler (Consist of elements and methods for Scheduler Page)
+	> AddNewTask : Add new Task
+	> EditDelete : Perform Edit Delete Task Operation
+- SEO (Consist of elements and methods for SEO Page)
+	> AddGoogleJs : Add Google Js Operation
+	> GenerateSiteMap : Generate SiteMap Operation
+	> GenerateRobots : Generate Robot Operations
+- Settings (Consist of elements and methods for Portal Settings Page)
+	> ChangeBasicSettings : Basic Settings Changes
+	> ChangeAdvancedSettings : Advanced Settings Changes
+	> ChangeSuperUserSettings : SuperUser Settings Changes
+- Site Analytics (Consist of elements and methods for Site Analytics Page)
+	> SiteAnalytics : Perform Site Analytics Operations
+	> DateWiseSiteAnalytics : Set Date For Analytics
+	> PaginationSelect : Set Pagination 
+- SQL (Consist of elements and methods for SQL Page)
+	> SQLPageFunctions : Perform SQL Operations
+- System-Event-StartUp (Consist of elements and methods for System Event StartUp Page)
+	> Add_Event_StartUp : Add Event StartUp Operations
+	> EventListManagement : Event List Management
+	> EditDeleteLink : Return Edit Delete Link
+- Templates (Consist of elements and methods for Templates Page)
+	> CreateNewTemplate : Create New Template
+	> TemplateFileEditor : Template File Editor Opertaions
+	> Layout : Layout Operations
+	> Preset : Set Preset Values
+	> SelectTemplate : Template Selection
+- User Registration (Consist of elements and methods for User Registration Page)
+	> RegisterUser : Register User
+- User (Consist of elements and methods for User Page)
+	> AddUser : Add User Operation
+	> DelUser : Delete User Operation
+	> UpdateUser : Update User Operation
+	> UserSetting : User Settings Operation
+	> ExportImportUser : Export Import User Details
+	> Search_User : Search User
+2) SageFrameTest (Test Class Library including all the testmethod in a single class) : Uses reference of QASageFrame
+- SageFrameTest (Test Class consisting of various tests for Sageframe)
+	> LoginOperation : Perform Login Action
+	> TemplateOperation : Perform Template Action(Layout/ Preset/ Template File Editor)
+	> RoleOperation : Perform Role Based Actions
+	> UserOperation : Perform User Based Actions
+	> PageOperation : Perform Page Management Actions
+	> MenuOperation : Perform Menu Action
+	> ModulesOperation : Perform Modules Action
+	> SettingsOperation : Perform Settings Action
+	> PortalOperation : Perform Portal Actions
+	> LinksOperation : Perform Links Actions
+	> ModuleMakerOperation : Perform ModuleMaker Actions
+	> SQLOperation : Perform SQL Action
+	> SystemEventStartUpOperation : Perform SystemEvent StartUp Action
+	> SiteAnalyticsOperation : Perform SiteAnalytics Action
+	> CDNOperation : Perform CDN Action
+	> EventLogOperation : Perform Event Log Actions
+	> CacheMaintenanceOperation : Perform CacheMaintenance Action
+	> SEOOperation : Perform SQL Action
+	> MessageTemplateOperation : Perform MessageTemplate Action
+	> SchedulerOperation : Perform Scheduler Action
+	> ModuleMessageOperation : Perform Module Message Action
+	> ListOperation : Perform List Action
+	> LocalizationOperation : Perform Localization Actions
+	> TearDown : Perform Browser Quit
+- ExcelImport (Test Class consisting the test for Excel Data Import)
+3) AutoIT (Folder consisting of autoit scripts for windows dialog manipulation) : Try not to use AutoIT for almost any of the cases.
+

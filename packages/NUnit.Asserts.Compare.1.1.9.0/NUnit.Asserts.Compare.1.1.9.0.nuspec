@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>NUnit.Asserts.Compare</id>
+    <version>1.1.9.0</version>
+    <authors>mgibas</authors>
+    <owners>mgibas</owners>
+    <projectUrl>https://github.com/mgibas/NUnit.Asserts</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>NUnit comparing assertions</description>
+    <copyright>Copyright 2014</copyright>
+    <tags>NUnit Assert Compare</tags>
+    <dependencies>
+      <dependency id="CompareNETObjects" version="3.02.0.0" />
+      <dependency id="NUnit" version="2.6.4" />
+    </dependencies>
+  </metadata>
+</package>

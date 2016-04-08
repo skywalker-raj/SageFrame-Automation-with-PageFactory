@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="a143f8b2-760a-4f6d-9269-b2e8957baa4f" name="RajKumar-PC@RAJKUMARTHAPA 2015-08-20 16:58:12" runUser="RajkumarThapa\RajKumar-PC" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Default Test Settings" id="da0d2dae-e55e-4a46-8639-578d43b68b6b">
+    <Deployment userDeploymentRoot="C:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\bin\Release" useDefaultDeploymentRoot="false" runDeploymentRoot="RajKumar-PC_RAJKUMARTHAPA 2015-08-20 16_58_12" />
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+    <Properties />
+  </TestSettings>
+  <Times creation="2015-08-20T16:58:12.7387607+05:45" queuing="2015-08-20T16:58:13.5908078+05:45" start="2015-08-20T16:58:13.7148149+05:45" finish="2015-08-20T16:58:49.0647929+05:45" />
+  <ResultSummary outcome="Completed">
+    <Counters total="2" executed="2" passed="2" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="Can_Register" storage="sageframetest.dll" id="6f9ce069-7408-58d5-45d4-395d05b7ffaa">
+      <Execution id="cbf7ef4d-446c-4c61-890c-107c6bb34110" />
+      <TestMethod codeBase="C:/Users/RajKumar-PC/Documents/Visual Studio 2013/Projects/QASageframe/SageframeTest/bin/Release/SageframeTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="SageframeTest.RegisterUser, SageframeTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Can_Register" />
+    </UnitTest>
+    <UnitTest name="Can_AddRole" storage="sageframetest.dll" id="556aef55-a16d-8e0c-435a-cd992bb473a3">
+      <Execution id="993835fd-7f19-4917-b642-6758894c577c" />
+      <TestMethod codeBase="C:/Users/RajKumar-PC/Documents/Visual Studio 2013/Projects/QASageframe/SageframeTest/bin/Release/SageframeTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="SageframeTest.AddRoles, SageframeTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Can_AddRole" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="556aef55-a16d-8e0c-435a-cd992bb473a3" executionId="993835fd-7f19-4917-b642-6758894c577c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6f9ce069-7408-58d5-45d4-395d05b7ffaa" executionId="cbf7ef4d-446c-4c61-890c-107c6bb34110" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="993835fd-7f19-4917-b642-6758894c577c" testId="556aef55-a16d-8e0c-435a-cd992bb473a3" testName="Can_AddRole" computerName="RAJKUMARTHAPA" duration="00:00:26.7183657" startTime="2015-08-20T16:58:13.7468161+05:45" endTime="2015-08-20T16:58:41.1113470+05:45" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="993835fd-7f19-4917-b642-6758894c577c">
+    </UnitTestResult>
+    <UnitTestResult executionId="cbf7ef4d-446c-4c61-890c-107c6bb34110" testId="6f9ce069-7408-58d5-45d4-395d05b7ffaa" testName="Can_Register" computerName="RAJKUMARTHAPA" duration="00:00:07.7801364" startTime="2015-08-20T16:58:41.2103541+05:45" endTime="2015-08-20T16:58:49.0027903+05:45" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cbf7ef4d-446c-4c61-890c-107c6bb34110">
+    </UnitTestResult>
+  </Results>
+</TestRun>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>WebDriverChromeDriver</id>
+    <version>2.10</version>
+    <authors>Chromium</authors>
+    <owners>Chromium</owners>
+    <licenseUrl>http://opensource.org/licenses/BSD-3-Clause</licenseUrl>
+    <projectUrl>https://code.google.com/p/chromedriver/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>WebDriver for Google Chrome</description>
+    <releaseNotes>Supports Chrome v33-36
+Resolved issue 780: Deny remote connections unless --whitelisted-ips is passed. [Pri-0]
+Resolved issue 698: implement touch flick command on Android [Pri-1]
+Resolved issue 760: Implement command to switch to parent frame [Pri-1]
+Resolved issue 152: Support --version switch [Pri-3]</releaseNotes>
+    <copyright>Copyright 2014</copyright>
+    <tags>chrome selenium webdriver testing web chromedriver</tags>
+  </metadata>
+</package>

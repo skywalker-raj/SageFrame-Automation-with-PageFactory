@@ -1,0 +1,711 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="C:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\bin\Debug\SageframeTest.dll" total="93" errors="84" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2015-09-28" time="15:07:46">
+  <environment nunit-version="2.6.4.14350" clr-version="2.0.50727.8000" os-version="Microsoft Windows NT 6.2.9200.0" platform="Win32NT" cwd="D:\Personnel\Selenium WebDriver\C#\NUnit-2.6.4\bin" machine-name="RAJKUMARTHAPA" user="RajKumar-PC" user-domain="RajkumarThapa" />
+  <culture-info current-culture="en-US" current-uiculture="en-US" />
+  <test-suite type="Assembly" name="C:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\bin\Debug\SageframeTest.dll" executed="True" result="Failure" success="False" time="1062.291" asserts="0">
+    <results>
+      <test-suite type="Namespace" name="SageframeTest" executed="True" result="Failure" success="False" time="1062.270" asserts="0">
+        <results>
+          <test-suite type="TestFixture" name="ExcelImport" executed="True" result="Success" success="True" time="2.110" asserts="0">
+            <results>
+              <test-case name="SageframeTest.ExcelImport.ImportDataFromExcel" executed="True" result="Success" success="True" time="2.102" asserts="0" />
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="SageFrameTest" executed="True" result="Failure" success="False" time="1060.137" asserts="0">
+            <results>
+              <test-suite type="ParameterizedTest" name="CacheMaintenanceOperation" executed="True" result="Failure" success="False" time="81.175" asserts="0">
+                <results>
+                  <test-case name="SageframeTest.SageFrameTest.CacheMaintenanceOperation(&quot;superuser&quot;,&quot;superuser&quot;)" executed="True" result="Success" success="True" time="23.803" asserts="2" />
+                  <test-case name="SageframeTest.SageFrameTest.CacheMaintenanceOperation(&quot;superuser&quot;,&quot;admin&quot;)" executed="True" result="Error" success="False" time="46.137" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.CacheMaintenanceOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 873
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.CacheMaintenanceOperation(&quot;admin&quot;,&quot;superuser&quot;)" executed="True" result="Error" success="False" time="5.167" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.CacheMaintenanceOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 873
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.CacheMaintenanceOperation(&quot;admin&quot;,&quot;admin&quot;)" executed="True" result="Error" success="False" time="5.176" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.CacheMaintenanceOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 873
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                </results>
+              </test-suite>
+              <test-suite type="ParameterizedTest" name="CDNOperation" executed="True" result="Failure" success="False" time="62.745" asserts="0">
+                <results>
+                  <test-case name="SageframeTest.SageFrameTest.CDNOperation(&quot;superuser&quot;,&quot;superuser&quot;)" executed="True" result="Error" success="False" time="16.755" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.CDNOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 817
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.CDNOperation(&quot;superuser&quot;,&quot;admin&quot;)" executed="True" result="Error" success="False" time="17.016" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.CDNOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 817
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.CDNOperation(&quot;admin&quot;,&quot;superuser&quot;)" executed="True" result="Error" success="False" time="6.200" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.CDNOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 817
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.CDNOperation(&quot;admin&quot;,&quot;admin&quot;)" executed="True" result="Error" success="False" time="22.736" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.CDNOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 817
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                </results>
+              </test-suite>
+              <test-suite type="ParameterizedTest" name="EventLogOperation" executed="True" result="Failure" success="False" time="95.639" asserts="0">
+                <results>
+                  <test-case name="SageframeTest.SageFrameTest.EventLogOperation(&quot;superuser&quot;,&quot;superuser&quot;)" executed="True" result="Success" success="True" time="29.299" asserts="2" />
+                  <test-case name="SageframeTest.SageFrameTest.EventLogOperation(&quot;superuser&quot;,&quot;admin&quot;)" executed="True" result="Error" success="False" time="48.923" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.EventLogOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 849
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.EventLogOperation(&quot;admin&quot;,&quot;superuser&quot;)" executed="True" result="Error" success="False" time="3.940" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.EventLogOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 849
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.EventLogOperation(&quot;admin&quot;,&quot;admin&quot;)" executed="True" result="Success" success="True" time="13.455" asserts="2" />
+                </results>
+              </test-suite>
+              <test-suite type="ParameterizedTest" name="LinksOperation" executed="True" result="Failure" success="False" time="62.581" asserts="0">
+                <results>
+                  <test-case name="SageframeTest.SageFrameTest.LinksOperation(&quot;superuser&quot;,&quot;superuser&quot;)" executed="True" result="Success" success="True" time="26.302" asserts="2" />
+                  <test-case name="SageframeTest.SageFrameTest.LinksOperation(&quot;superuser&quot;,&quot;admin&quot;)" executed="True" result="Error" success="False" time="22.175" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.LinksOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 656
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.LinksOperation(&quot;admin&quot;,&quot;superuser&quot;)" executed="True" result="Error" success="False" time="8.859" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.LinksOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 656
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.LinksOperation(&quot;admin&quot;,&quot;admin&quot;)" executed="True" result="Error" success="False" time="5.220" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.LinksOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 656
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                </results>
+              </test-suite>
+              <test-suite type="ParameterizedTest" name="ListOperation" executed="True" result="Failure" success="False" time="57.802" asserts="0">
+                <results>
+                  <test-case name="SageframeTest.SageFrameTest.ListOperation(&quot;superuser&quot;,&quot;superuser&quot;)" executed="True" result="Error" success="False" time="16.774" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.ListOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 1049
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.ListOperation(&quot;superuser&quot;,&quot;admin&quot;)" executed="True" result="Error" success="False" time="4.719" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.ListOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 1049
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.ListOperation(&quot;admin&quot;,&quot;superuser&quot;)" executed="True" result="Error" success="False" time="14.041" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.ListOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 1049
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.ListOperation(&quot;admin&quot;,&quot;admin&quot;)" executed="True" result="Error" success="False" time="22.246" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.ListOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 1049
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                </results>
+              </test-suite>
+              <test-suite type="ParameterizedTest" name="LocalizationOperation" executed="True" result="Failure" success="False" time="525.919" asserts="0">
+                <results>
+                  <test-case name="SageframeTest.SageFrameTest.LocalizationOperation(&quot;superuser&quot;,&quot;superuser&quot;)" executed="True" result="Error" success="False" time="248.290" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.LocalizationOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 1120
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.LocalizationOperation(&quot;superuser&quot;,&quot;admin&quot;)" executed="True" result="Error" success="False" time="6.815" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.LocalizationOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 1120
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.LocalizationOperation(&quot;admin&quot;,&quot;superuser&quot;)" executed="True" result="Error" success="False" time="5.111" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.LocalizationOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 1120
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.LocalizationOperation(&quot;admin&quot;,&quot;admin&quot;)" executed="True" result="Error" success="False" time="265.639" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.LocalizationOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 1120
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                </results>
+              </test-suite>
+              <test-suite type="ParameterizedTest" name="LoginOperation" executed="True" result="Failure" success="False" time="76.383" asserts="0">
+                <results>
+                  <test-case name="SageframeTest.SageFrameTest.LoginOperation(&quot;superuser&quot;,&quot;superuser&quot;)" executed="True" result="Success" success="True" time="21.367" asserts="3" />
+                  <test-case name="SageframeTest.SageFrameTest.LoginOperation(&quot;superuser&quot;,&quot;admin&quot;)" executed="True" result="Error" success="False" time="32.286" asserts="3">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.LoginOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 69
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.LoginOperation(&quot;admin&quot;,&quot;superuser&quot;)" executed="True" result="Error" success="False" time="5.888" asserts="3">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.LoginOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 69
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.LoginOperation(&quot;admin&quot;,&quot;admin&quot;)" executed="True" result="Success" success="True" time="16.824" asserts="3" />
+                </results>
+              </test-suite>
+              <test-suite type="ParameterizedTest" name="MenuOperation" executed="True" result="Failure" success="False" time="77.115" asserts="0">
+                <results>
+                  <test-case name="SageframeTest.SageFrameTest.MenuOperation(&quot;superuser&quot;,&quot;superuser&quot;)" executed="True" result="Success" success="True" time="28.921" asserts="3" />
+                  <test-case name="SageframeTest.SageFrameTest.MenuOperation(&quot;superuser&quot;,&quot;admin&quot;)" executed="True" result="Error" success="False" time="13.765" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.MenuOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 378
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.MenuOperation(&quot;admin&quot;,&quot;superuser&quot;)" executed="True" result="Error" success="False" time="5.902" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.MenuOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 378
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.MenuOperation(&quot;admin&quot;,&quot;admin&quot;)" executed="True" result="Success" success="True" time="28.318" asserts="3" />
+                </results>
+              </test-suite>
+              <test-suite type="ParameterizedTest" name="MessageTemplateOperation" executed="True" result="Failure" success="False" time="8.699" asserts="0">
+                <results>
+                  <test-case name="SageframeTest.SageFrameTest.MessageTemplateOperation(&quot;superuser&quot;,&quot;superuser&quot;)" executed="True" result="Error" success="False" time="7.694" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.MessageTemplateOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 935
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.MessageTemplateOperation(&quot;superuser&quot;,&quot;admin&quot;)" executed="True" result="Error" success="False" time="0.643" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.MessageTemplateOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 935
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.MessageTemplateOperation(&quot;admin&quot;,&quot;superuser&quot;)" executed="True" result="Error" success="False" time="0.153" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.MessageTemplateOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 935
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.MessageTemplateOperation(&quot;admin&quot;,&quot;admin&quot;)" executed="True" result="Error" success="False" time="0.184" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.MessageTemplateOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 935
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                </results>
+              </test-suite>
+              <test-suite type="ParameterizedTest" name="ModuleMakerOperation" executed="True" result="Failure" success="False" time="1.155" asserts="0">
+                <results>
+                  <test-case name="SageframeTest.SageFrameTest.ModuleMakerOperation(&quot;superuser&quot;,&quot;superuser&quot;)" executed="True" result="Error" success="False" time="0.424" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.ModuleMakerOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 693
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.ModuleMakerOperation(&quot;superuser&quot;,&quot;admin&quot;)" executed="True" result="Error" success="False" time="0.220" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.ModuleMakerOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 693
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.ModuleMakerOperation(&quot;admin&quot;,&quot;superuser&quot;)" executed="True" result="Error" success="False" time="0.178" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.ModuleMakerOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 693
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.ModuleMakerOperation(&quot;admin&quot;,&quot;admin&quot;)" executed="True" result="Error" success="False" time="0.309" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.ModuleMakerOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 693
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                </results>
+              </test-suite>
+              <test-suite type="ParameterizedTest" name="ModuleMessageOperation" executed="True" result="Failure" success="False" time="0.801" asserts="0">
+                <results>
+                  <test-case name="SageframeTest.SageFrameTest.ModuleMessageOperation(&quot;superuser&quot;,&quot;superuser&quot;)" executed="True" result="Error" success="False" time="0.215" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.ModuleMessageOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 1006
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.ModuleMessageOperation(&quot;superuser&quot;,&quot;admin&quot;)" executed="True" result="Error" success="False" time="0.172" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.ModuleMessageOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 1006
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.ModuleMessageOperation(&quot;admin&quot;,&quot;superuser&quot;)" executed="True" result="Error" success="False" time="0.200" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.ModuleMessageOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 1006
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.ModuleMessageOperation(&quot;admin&quot;,&quot;admin&quot;)" executed="True" result="Error" success="False" time="0.189" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.ModuleMessageOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 1006
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                </results>
+              </test-suite>
+              <test-suite type="ParameterizedTest" name="ModulesOperation" executed="True" result="Failure" success="False" time="0.932" asserts="0">
+                <results>
+                  <test-case name="SageframeTest.SageFrameTest.ModulesOperation(&quot;superuser&quot;,&quot;superuser&quot;)" executed="True" result="Error" success="False" time="0.270" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.ModulesOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 500
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.ModulesOperation(&quot;superuser&quot;,&quot;admin&quot;)" executed="True" result="Error" success="False" time="0.174" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.ModulesOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 500
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.ModulesOperation(&quot;admin&quot;,&quot;superuser&quot;)" executed="True" result="Error" success="False" time="0.272" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.ModulesOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 500
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.ModulesOperation(&quot;admin&quot;,&quot;admin&quot;)" executed="True" result="Error" success="False" time="0.196" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.ModulesOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 500
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                </results>
+              </test-suite>
+              <test-suite type="ParameterizedTest" name="PageOperation" executed="True" result="Failure" success="False" time="0.836" asserts="0">
+                <results>
+                  <test-case name="SageframeTest.SageFrameTest.PageOperation(&quot;superuser&quot;,&quot;superuser&quot;)" executed="True" result="Error" success="False" time="0.279" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.PageOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 327
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.PageOperation(&quot;superuser&quot;,&quot;admin&quot;)" executed="True" result="Error" success="False" time="0.150" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.PageOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 327
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.PageOperation(&quot;admin&quot;,&quot;superuser&quot;)" executed="True" result="Error" success="False" time="0.198" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.PageOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 327
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.PageOperation(&quot;admin&quot;,&quot;admin&quot;)" executed="True" result="Error" success="False" time="0.189" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.PageOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 327
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                </results>
+              </test-suite>
+              <test-suite type="ParameterizedTest" name="PortalOperation" executed="True" result="Failure" success="False" time="0.845" asserts="0">
+                <results>
+                  <test-case name="SageframeTest.SageFrameTest.PortalOperation(&quot;superuser&quot;,&quot;superuser&quot;)" executed="True" result="Error" success="False" time="0.300" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.PortalOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 616
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.PortalOperation(&quot;superuser&quot;,&quot;admin&quot;)" executed="True" result="Error" success="False" time="0.148" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.PortalOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 616
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.PortalOperation(&quot;admin&quot;,&quot;superuser&quot;)" executed="True" result="Error" success="False" time="0.176" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.PortalOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 616
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.PortalOperation(&quot;admin&quot;,&quot;admin&quot;)" executed="True" result="Error" success="False" time="0.199" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.PortalOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 616
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                </results>
+              </test-suite>
+              <test-suite type="ParameterizedTest" name="RoleOperation" executed="True" result="Failure" success="False" time="0.735" asserts="0">
+                <results>
+                  <test-case name="SageframeTest.SageFrameTest.RoleOperation(&quot;superuser&quot;,&quot;superuser&quot;)" executed="True" result="Error" success="False" time="0.190" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.RoleOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 204
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.RoleOperation(&quot;superuser&quot;,&quot;admin&quot;)" executed="True" result="Error" success="False" time="0.163" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.RoleOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 204
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.RoleOperation(&quot;admin&quot;,&quot;superuser&quot;)" executed="True" result="Error" success="False" time="0.179" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.RoleOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 204
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.RoleOperation(&quot;admin&quot;,&quot;admin&quot;)" executed="True" result="Error" success="False" time="0.178" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.RoleOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 204
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                </results>
+              </test-suite>
+              <test-suite type="ParameterizedTest" name="SchedulerOperation" executed="True" result="Failure" success="False" time="0.829" asserts="0">
+                <results>
+                  <test-case name="SageframeTest.SageFrameTest.SchedulerOperation(&quot;superuser&quot;,&quot;superuser&quot;)" executed="True" result="Error" success="False" time="0.210" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.SchedulerOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 979
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.SchedulerOperation(&quot;superuser&quot;,&quot;admin&quot;)" executed="True" result="Error" success="False" time="0.169" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.SchedulerOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 979
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.SchedulerOperation(&quot;admin&quot;,&quot;superuser&quot;)" executed="True" result="Error" success="False" time="0.268" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.SchedulerOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 979
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.SchedulerOperation(&quot;admin&quot;,&quot;admin&quot;)" executed="True" result="Error" success="False" time="0.156" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.SchedulerOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 979
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                </results>
+              </test-suite>
+              <test-suite type="ParameterizedTest" name="SEOOperation" executed="True" result="Failure" success="False" time="0.736" asserts="0">
+                <results>
+                  <test-case name="SageframeTest.SageFrameTest.SEOOperation(&quot;superuser&quot;,&quot;superuser&quot;)" executed="True" result="Error" success="False" time="0.198" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.SEOOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 907
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.SEOOperation(&quot;superuser&quot;,&quot;admin&quot;)" executed="True" result="Error" success="False" time="0.198" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.SEOOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 907
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.SEOOperation(&quot;admin&quot;,&quot;superuser&quot;)" executed="True" result="Error" success="False" time="0.162" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.SEOOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 907
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.SEOOperation(&quot;admin&quot;,&quot;admin&quot;)" executed="True" result="Error" success="False" time="0.154" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.SEOOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 907
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                </results>
+              </test-suite>
+              <test-suite type="ParameterizedTest" name="SettingsOperation" executed="True" result="Failure" success="False" time="0.811" asserts="0">
+                <results>
+                  <test-case name="SageframeTest.SageFrameTest.SettingsOperation(&quot;superuser&quot;,&quot;superuser&quot;)" executed="True" result="Error" success="False" time="0.254" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.SettingsOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 578
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.SettingsOperation(&quot;superuser&quot;,&quot;admin&quot;)" executed="True" result="Error" success="False" time="0.198" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.SettingsOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 578
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.SettingsOperation(&quot;admin&quot;,&quot;superuser&quot;)" executed="True" result="Error" success="False" time="0.162" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.SettingsOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 578
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.SettingsOperation(&quot;admin&quot;,&quot;admin&quot;)" executed="True" result="Error" success="False" time="0.176" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.SettingsOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 578
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                </results>
+              </test-suite>
+              <test-suite type="ParameterizedTest" name="SiteAnalyticsOperation" executed="True" result="Failure" success="False" time="1.016" asserts="0">
+                <results>
+                  <test-case name="SageframeTest.SageFrameTest.SiteAnalyticsOperation(&quot;superuser&quot;,&quot;superuser&quot;)" executed="True" result="Error" success="False" time="0.312" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.SiteAnalyticsOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 782
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.SiteAnalyticsOperation(&quot;superuser&quot;,&quot;admin&quot;)" executed="True" result="Error" success="False" time="0.245" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.SiteAnalyticsOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 782
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.SiteAnalyticsOperation(&quot;admin&quot;,&quot;superuser&quot;)" executed="True" result="Error" success="False" time="0.187" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.SiteAnalyticsOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 782
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.SiteAnalyticsOperation(&quot;admin&quot;,&quot;admin&quot;)" executed="True" result="Error" success="False" time="0.250" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.SiteAnalyticsOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 782
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                </results>
+              </test-suite>
+              <test-suite type="ParameterizedTest" name="SQLOperation" executed="True" result="Failure" success="False" time="0.691" asserts="0">
+                <results>
+                  <test-case name="SageframeTest.SageFrameTest.SQLOperation(&quot;superuser&quot;,&quot;superuser&quot;)" executed="True" result="Error" success="False" time="0.167" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.SQLOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 720
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.SQLOperation(&quot;superuser&quot;,&quot;admin&quot;)" executed="True" result="Error" success="False" time="0.167" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.SQLOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 720
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.SQLOperation(&quot;admin&quot;,&quot;superuser&quot;)" executed="True" result="Error" success="False" time="0.174" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.SQLOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 720
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.SQLOperation(&quot;admin&quot;,&quot;admin&quot;)" executed="True" result="Error" success="False" time="0.162" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.SQLOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 720
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                </results>
+              </test-suite>
+              <test-suite type="ParameterizedTest" name="SystemEventStartUpOperation" executed="True" result="Failure" success="False" time="0.737" asserts="0">
+                <results>
+                  <test-case name="SageframeTest.SageFrameTest.SystemEventStartUpOperation(&quot;superuser&quot;,&quot;superuser&quot;)" executed="True" result="Error" success="False" time="0.169" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.SystemEventStartUpOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 751
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.SystemEventStartUpOperation(&quot;superuser&quot;,&quot;admin&quot;)" executed="True" result="Error" success="False" time="0.179" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.SystemEventStartUpOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 751
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.SystemEventStartUpOperation(&quot;admin&quot;,&quot;superuser&quot;)" executed="True" result="Error" success="False" time="0.170" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.SystemEventStartUpOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 751
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.SystemEventStartUpOperation(&quot;admin&quot;,&quot;admin&quot;)" executed="True" result="Error" success="False" time="0.193" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.SystemEventStartUpOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 751
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                </results>
+              </test-suite>
+              <test-suite type="ParameterizedTest" name="TemplateOperation" executed="True" result="Failure" success="False" time="0.871" asserts="0">
+                <results>
+                  <test-case name="SageframeTest.SageFrameTest.TemplateOperation(&quot;superuser&quot;,&quot;superuser&quot;)" executed="True" result="Error" success="False" time="0.289" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.TemplateOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 161
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.TemplateOperation(&quot;superuser&quot;,&quot;admin&quot;)" executed="True" result="Error" success="False" time="0.186" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.TemplateOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 161
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.TemplateOperation(&quot;admin&quot;,&quot;superuser&quot;)" executed="True" result="Error" success="False" time="0.213" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.TemplateOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 161
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.TemplateOperation(&quot;admin&quot;,&quot;admin&quot;)" executed="True" result="Error" success="False" time="0.161" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.TemplateOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 161
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                </results>
+              </test-suite>
+              <test-suite type="ParameterizedTest" name="UserOperation" executed="True" result="Failure" success="False" time="0.784" asserts="0">
+                <results>
+                  <test-case name="SageframeTest.SageFrameTest.UserOperation(&quot;superuser&quot;,&quot;superuser&quot;)" executed="True" result="Error" success="False" time="0.193" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.UserOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 268
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.UserOperation(&quot;superuser&quot;,&quot;admin&quot;)" executed="True" result="Error" success="False" time="0.189" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.UserOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 268
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.UserOperation(&quot;admin&quot;,&quot;superuser&quot;)" executed="True" result="Error" success="False" time="0.166" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.UserOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 268
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="SageframeTest.SageFrameTest.UserOperation(&quot;admin&quot;,&quot;admin&quot;)" executed="True" result="Error" success="False" time="0.212" asserts="2">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at SageframeTest.SageFrameTest.UserOperation(String Username, String Password) in c:\Users\RajKumar-PC\Documents\Visual Studio 2013\Projects\QASageframe\SageframeTest\SageFrameTest.cs:line 268
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>
